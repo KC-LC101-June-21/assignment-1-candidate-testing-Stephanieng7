@@ -3,37 +3,73 @@ const input = require('readline-sync');
 // TODO 2: modify your quiz app to ask 5 questions //
 
 // TODO 1.1a: Define candidateName // 
-let candidateName;
+let candidateName = "" + ""
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-let correctAnswer;
-let candidateAnswer;
-let questions;
-let correctAnswers;
-let candidateAnswers;
+let question = "Who was the first American woman in space? " 
+let correctAnswer = "Sally Ride"
+let candidateAnswer = ""
+let questions = [("1)Who was the first American woman in space?  "), ("2)True or false: 5 kilometer == 5000 meters?  ")  , ("3)(5+3)/2 * 10 =?  "),  ("4)Given the array[8, Orbit, Trajectory, 45] what entry is at index 2?  "), ("5)What is the minimum crew size for the ISS?  ")];
+let correctAnswers = ["Sally Ride",  "true",  "40",  "Trajectory",  "3"];
+let candidateAnswers = [];
 
 
 function askForName() {
-  // TODO 1.1b: Ask for candidate's name //
-
+ let name = input.question("Candidate Name: ");
+ let candidateName = name;
+//  console.log("Hello,", candidateName);
+  
+ // TODO 1.1b: Ask for candidate's name //
 }
 
-function askQuestion() {
+
+
+
+function askQuestion(){
+  let total = 0
+   for(let i = 0; i < questions.length; i++){
+      candidateAnswers = input.question(questions[i]);
+      console.log("Your Response:" + candidateAnswers);
+      console.log("Correct Answer:" + correctAnswers[i]);
+        if(candidateAnswers === correctAnswers[i]){
+              total++}
+} 
+let grade = (total/questions.length * 100)
+  if(grade >= 80){
+  console.log ('>>> STATUS: PASSED <<<');
+}if(grade < 80){
+  console.log ('>>> STATUS: FAILED <<<');
+}
+
+
+console.log('>>> Overall Grade:'+ grade +  " % " + ( total + " of 5 responses correct") +'<<<' );
+   
+}
+
+
+  
+
+
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
 
-}
 
-function gradeQuiz(candidateAnswers) {
+
+
+
+
+
+
+
+function gradeQuiz(){
+
+}
+  
+
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
 
-  let grade;
-  
 
-  return grade;
-}
 
 function runProgram() {
   askForName();
@@ -55,4 +91,4 @@ module.exports = {
   candidateAnswers: candidateAnswers,
   gradeQuiz: gradeQuiz,
   runProgram: runProgram
-};
+}
