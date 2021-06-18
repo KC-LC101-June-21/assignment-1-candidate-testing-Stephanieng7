@@ -59,10 +59,7 @@ console.log(`>>> Overall Grade: ${grade} %   ${total} of 5 responses correct <<<
 
 
 
-function gradeQuiz(){
 
-}
-  
 
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
@@ -75,7 +72,7 @@ function runProgram() {
   // TODO 1.1c: Ask for candidate's name //
   
   askQuestion();
-  gradeQuiz(this.candidateAnswers);
+ 
 }
 
 // Don't write any code below this line //
@@ -88,6 +85,5 @@ module.exports = {
   questions: questions,
   correctAnswers: correctAnswers,
   candidateAnswers: candidateAnswers,
-  gradeQuiz: gradeQuiz,
   runProgram: runProgram
 }
