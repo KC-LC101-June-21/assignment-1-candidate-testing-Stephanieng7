@@ -40,8 +40,7 @@ let grade = (total/questions.length * 100)
   console.log ('>>> STATUS: FAILED <<<');
 }
 
-
-console.log('>>> Overall Grade:'+ grade +  " % " + ( total + " of 5 responses correct") +'<<<' );
+console.log(`>>> Overall Grade: ${grade} %   ${total} of 5 responses correct <<<`);
    
 }
 
